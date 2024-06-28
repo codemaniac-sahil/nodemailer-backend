@@ -60,8 +60,11 @@ MONGODB_URI=mongodb://localhost:27017/agenda
 Schedules an email to be sent after 1 hour.
 
 Endpoint: /schedule-email
+
 Method: POST
+
 Content-Type: application/json
+
 Request Body
 
 ```bash
