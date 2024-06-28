@@ -6,7 +6,7 @@ const Agenda = require("agenda");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGO_CONNECTION_STRING =
-  process.env.MONGODB_URL || "mongodb://127.0.0.1/agenda"; 
+  process.env.MONGODB_URL || "mongodb://127.0.0.1/agenda";
 
 // Configure body-parser
 app.use(bodyParser.json());
@@ -23,8 +23,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: process.env.EMAIL_ID || "sahilbisht19339@gmail.com", 
-    pass: process.env.PASSWORD || "yles ngzo zagj ttys", 
+    user: process.env.EMAIL_ID,
+    pass: process.env.PASSWORD,
   },
 });
 
@@ -33,7 +33,7 @@ agenda.define("send email", async (job) => {
   const { to, subject, text } = job.attrs.data;
 
   const mailOptions = {
-    from: process.env.EMAIL_ID || "sahilbisht19339@gmail.com", // Replace with your email
+    from: process.env.EMAIL_ID,
     to,
     subject,
     text,
